@@ -1,0 +1,109 @@
+﻿body
+{
+}
+.container {
+    background-color: #c4c4c4;
+    font-family: 'OCR A';
+    padding: 30px;
+    height: 400px;
+    width: 400px;
+    margin:auto;
+    //justify-content:center;
+    //align-items:center;
+    //display:flex;
+    margin-top:150px;
+    border-radius:10px;
+}
+.heading{
+    background-color:#808080;
+    color:white;
+    //padding:20px;
+    padding-right:30px;
+    padding-left:30px;   
+    padding-top:20px;
+    padding-bottom:20px;
+    border-radius:10px;
+    margin:initial;
+    //font-size:20px;
+    height:30px;
+}
+.p1{
+    display:inline-block;
+    float:left;
+    margin:initial;
+    font-size:24px;
+}
+.p2 {
+    display: inline-block;
+    float: right;
+    margin: initial;
+    font-size: 24px;
+}
+.list{
+    letter-spacing:2px;
+    color:#545454;
+    margin-top:50px;
+}
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+li {
+    margin-top: 20px;
+    
+}
+    li:before {
+        content: '\2713';
+        color:forestgreen;
+    }
+.line{
+    margin-top:50px;
+    margin-bottom:20px;
+    color:#26272b;
+    border-top:solid 2px;
+}
+.button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin: initial;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 35px;
+    width: 15%;
+    font-family: 'OCR A';
+    font-size: 15px;
+    //background-color: transparent;
+    transition: 0.4s ease-out;
+    transition-property: all;
+    color: #545454;
+    border-color: #545454;
+    background: linear-gradient(transparent, white);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    border: solid 2px;
+    //border:hidden;
+}
+
+    .button:hover {
+        //background-color: #26272b;
+        //width: 16%;
+        //color: white;
+        transition: 0.4s ease-out;
+        transition-property: all;
+        background-size: 100% 100%;
+        //background-position:bottom;
+        //padding-bottom:20px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border: solid 2px;
+        /*border-bottom-color:white;
+        border-left-color:white;*/
+    }
+    span{
+        font-size:15px;
+    }

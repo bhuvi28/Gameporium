@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signInStyles.css" />
+    <title>Document</title>
+  </head>
+  <body class="background_image">
+    <div class="container">
+      <div class="logoStylesDiv">
+        <img class="logoStyles" src="logo.png" alt="gameporiumLogo" />
+      </div>
+      <h1 class="signUpText">SIGN UP</h1>
+      <form action="SignInPHP.php" method="post" >
+        <div class="row" id="something" onload="getErrorId(id,'name')">
+          <div class="col-1">
+            <label for="name"
+              >First Name<span class="required"><sup>*</sup></span> </label
+            ><br />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              onblur="validateFormName(id,'errorname','formatErrorFName',0)"
+            /><br />
+            <span class="error" id="errorname"> Required</span>
+            <span class="error" id="formatErrorFName">Invalid First Name Format</span>
+          </div>
+
+          <div class="col-2">
+            <label for="lname"
+              >Last Name<span class="required"><sup>*</sup></span> </label
+            ><br />
+            <input
+              type="text"
+              name="lname"
+              id="lname"
+              onblur="validateFormName(id,'errorLastName','formatErrorLName',1)"
+            /><br />
+            <span class="error" id="errorLastName">Required</span>
+            <span class="error" id="formatErrorLName">Invalid Last Name Format</span>
+          </div>
+        </div>
+        <div class="displayName">
+          <label for="dname"
+            >Display Name<span class="required"><sup>*</sup></span> </label
+          ><br />
+          <input
+            type="text"
+            name="dname"
+            id="dname"
+            class="dnameInput"
+            onblur="validateForm(id,'errorDname',2)"
+          /><br />
+          <span class="error" id="errorDname">Required</span>
+        </div>
+        <div class="emailAddress">
+          <label for="email"
+            >Email Address<span class="required"><sup>*</sup></span> </label
+          ><br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="emailAddressInput"
+            onblur="validateFormEmail(id,'errorEmail','formatErrorEmail',3)"
+          /><br />
+          <span class="error" id="errorEmail">Required</span>
+          <span class="error" id="formatErrorEmail">Invalid Email</span>
+        </div>
+        <div class="password">
+          <label for="password"
+            >Password<span class="required"><sup>*</sup></span> </label
+          ><br />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="passwordInput"
+            onblur="validatePassword(id,'errorPassword','formatErrorPassword',4)"
+          >
+          <img src="show.png" onclick="showHideEye();" alt="showPasswordIcon" id="showHide" />
+        </input>
+          <!-- <span onclick="showHideEye()"
+            ><img src="show.png" alt="showPasswordIcon" id="showHide" />
+            </span
+          ><br /> -->
+          <span class="error" id="errorPassword">Required</span>
+          <span class="error" id="formatErrorPassword">The password is not strong! Include 1 Uppercase,1 Lowercase, 1 digit and atleast 1 special character and 8 minimum characters</span>
+        </div>
+        <div class="termsAndConditions">
+          <label class="checkboxLabel">
+            <input
+              type="checkbox"
+              id="checkBox"
+              class="checkboxInput"
+              onchange="validateTNC(id,'container1',5)"
+            />
+            I have read and agree to the
+            <a href="#" class="tnc">terms and service</a>
+          </label>
+          <div class="errorTNC" id="container1">
+            You have to accept Terms of Use
+          </div>
+        </div>
+        <div class="continue">
+          <button type="submit" class="submitForm" id="submitButton">
+            SUBMIT
+          </button>
+        </div>
+        <div class="something">
+          <a href="login.html"><button type="submit" class="login" id="submit">
+          Not a new member : Login
+        </button></a></div>
+        <div class="something">
+          <a href="Home.php"><button type="submit" class="browse" id="submit">
+          Browse
+        </button></a></div>
+      </form>
+    </div>
+    <script src="registrationForm.js"></script>
+  </body>
+</html>

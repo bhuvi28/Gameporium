@@ -1,0 +1,305 @@
+/* NavbarStyles */
+.logoStyles {
+  width: 28%;
+  cursor: pointer;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.columnLogo {
+  float: left;
+  width: 25%;
+}
+.columnNavbar {
+  float: right;
+  width: 30%;
+  display: inline;
+  margin-top: 10px;
+}
+.dropdown-content-explore {
+  display: none;
+  position: absolute;
+  background-color: #c4c4c4;
+  min-width: 160px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 70px;
+  font-family: "OCR A";
+  font-size: 15px;
+}
+.dropdown-content-explore a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content-explore a:hover {
+  background-color: #111;
+  color: white;
+  text-shadow: 2px 2px 10px whitesmoke;
+  border-radius: 10px;
+}
+.dropdown-content-user {
+  display: none;
+  position: absolute;
+  background-color: #c4c4c4;
+  min-width: 160px;
+  width:fit-content;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 10px;
+  font-family: "OCR A";
+  font-size: 15px;
+}
+.dropdown-content-user a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content-user a:hover {
+  background-color: #111;
+  color: white;
+  text-shadow: 2px 2px 10px whitesmoke;
+  border-radius: 10px;
+}
+.showUser {
+  display: block;
+}
+.showExplore {
+  display: block;
+}
+.navbarItems {
+  list-style-type: none;
+  color: #0a0909;
+  font-family: "OCR A";
+  text-shadow: 2px 2px 8px black;
+  margin: 0%;
+  text-decoration: none;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 125%;
+  text-align: center;
+  padding: 22px 30px;
+  transition: 0.3s ease-in-out;
+}
+.navbarItems:hover {
+  background-color: #111;
+  color: white;
+  text-shadow: 2px 2px 10px whitesmoke;
+  transition: 0.3s ease-in-out;
+}
+.navbar2Container {
+  margin-left: 100px;
+  background-color: #c4c4c4;
+  opacity: 0.8;
+  width: fit-content;
+  border-radius: 10px;
+}
+.navbar2Container a.active{
+  background-color: #111;
+  color: white;
+  text-shadow: 2px 2px 10px whitesmoke;
+}
+/* end of navbarStyles */
+/* end of navbarStyles */
+.myImage {
+  margin-top: 25px;
+  border-radius: 50px;
+  width: 33%;
+  margin-left: 17px;
+  margin-bottom: 10px;
+}
+.logosPersonalImage {
+  margin-top: 10px;
+  border-radius: 25px;
+  height: 40px;
+  width: 40px;
+  margin-left: 12px;
+}
+.display_inline {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ol {
+  list-style-type: none;
+  padding-inline-start: 7px;
+}
+li:hover {
+  /* color: aqua; */
+  cursor: pointer;
+}
+.toDisplayInline {
+  display: inline;
+}
+
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  color: black;
+  margin-left: 0px;
+  font-size: 63px;
+  margin-right: 0;
+}
+
+.backgroundimage {
+  /* display: block;
+      background-color: black;
+      background-size: cover;*/
+  background-image: url("background_image2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.button {
+  background-color: black;
+  border: 2%;
+  border-color: white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: grey;
+  color: white;
+}
+.navbar {
+  display: block;
+  color: #545454;
+  font-size: 30px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: "OCR A";
+}
+.navbar:hover {
+  display: block;
+  color: red;
+  font-size: 30px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: underline;
+}
+.navbar:active {
+  display: block;
+  color: red;
+  font-size: 30px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: underline;
+}
+
+.text_about_us {
+  color: #545454;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(196, 196, 196, 0.4);
+  /* //background-color: #c4c4c4; */
+  padding: 70px;
+  border-radius: 15px;
+  margin-left: 150px;
+  font-size: 20px;
+  margin-right: 150px;
+  margin-bottom: 150px;
+  text-align: justify;
+  font-family: "OCR A";
+}
+.site-footer {
+  background-color: #26272b;
+  padding: 45px 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
+  box-shadow: 2px -13px 29px 0px rgba(85, 48, 48, 0.75);
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.too_left {
+  width: 15%;
+}
+
+.left {
+  width: 30%;
+}
+.right {
+  width: 20%;
+}
+
+.middle {
+  width: 20%;
+}
+.too_right {
+  width: 15%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.middleSocial {
+  width: 70%;
+}
+.rightSocial {
+  width: 15%;
+}
+.leftSocial {
+  width: 15%;
+}
+.divide_linksLeft {
+  width: 55%;
+}
+.divide_linksRight {
+  width: 15%;
+}
+.logos {
+  margin-top: 10px;
+  border-radius: 25%;
+  width: 5%;
+  text-align: right;
+}
+table {
+  background-color: #26272b;
+  /*border-radius:25px;
+        margin:30px;*/
+}

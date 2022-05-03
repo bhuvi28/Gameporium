@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Gameporium</title>
+    <link rel="stylesheet" href="emailEntry.css" />
+  </head>
+  <body class="backgroundimage">
+    <div class="navbar">
+      <div class="row">
+        <div class="columnLogo">
+          <a href="homePage.html"
+            ><img class="logoStyles" src="logo.png" alt="gameporiumLogo"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <p id="p1">Enter your registered E-mail ID.</p>
+    <p id="somethingItalics">We will send you a link to reset your password.</p>
+    <form action="sendFirstEmail.php" method="post">
+      <div class="form-group">
+        <input
+          type="text"
+          class="inputFeilds"
+          name="username"
+          placeholder="Username"
+          id="myUsername"
+          onblur="validateFormEmail(id,'errorUsername','formatErrorEmail',0)"
+        />
+      </div>
+      <i class="error" id="errorUsername"> *Required</i>
+      <i class="error" id="formatErrorEmail"> *Invalid Email</i>
+      <br />
+      <br />
+      <button class="button" type="submit" id="submit" onclick="sendEmail()">
+        <b> Submit &rarr;</b>
+      </button>
+      <br />
+      <button
+        onclick="location.href = 'signIn.html'"
+        class="buttonNewMember"
+        type="button"
+      >
+        <b> NEW MEMBER</b>
+      </button>
+    </form>
+    <script src="emailEntry.js"></script>
+  </body>
+  <br /><br />
+</html>

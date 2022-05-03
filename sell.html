@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Sell</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reg-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      var checkSubmitLength = 10;     
+      var checkSubmit = new Array(checkSubmitLength).fill(true);
+      checkToBeDisabled();
+
+      function validateForm(id, errorID, type) {
+  var myErrorID = document.getElementById(errorID);
+  var myValue = document.getElementById(id).value;
+  if (myValue == "" || myValue == null) {
+      checkSubmit[type] = true;
+    myErrorID.classList.add("showError");
+  } else {
+    if (myErrorID.classList.contains("showError"))
+      myErrorID.classList.remove("showError");
+      checkSubmit[type] = false;
+  }
+  checkToBeDisabled();
+}
+
+  function validateFormEmail(id, reqErrorID,invalidErrorID,type) {
+  var reqErrorID = document.getElementById(reqErrorID);
+  var invalidErrorID = document.getElementById(invalidErrorID);
+  var myValue = document.getElementById(id).value;
+  if (myValue == "" || myValue == null) {
+    reqErrorID.classList.add("showError");
+    if(invalidErrorID.classList.contains("showError"))
+    invalidErrorID.classList.remove("showError");
+    checkSubmit[type] = true;
+    return;
+  } 
+  else { (reqErrorID.classList.contains("showError"))
+    reqErrorID.classList.remove("showError");
+    checkSubmit[type] = false;
+  }
+  var checkPattern = /[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}/;
+    if(!myValue.match(checkPattern)){
+    invalidErrorID.classList.add("showError");
+    checkSubmit[type] = true;
+  }
+  else {
+       if(invalidErrorID.classList.contains("showError"))
+    invalidErrorID.classList.remove("showError");
+    checkSubmit[type] = false;
+  }
+  checkToBeDisabled();
+}
+function checkToBeDisabled(){
+    var check = true;
+    checkSubmit.forEach(element => {
+          if(element==true){
+            document.getElementById("submitButton").disabled = true;
+            check = false;
+            return;
+          }
+      });
+      if(check == true)
+      document.getElementById("submitButton").disabled = false;
+  }
+</script>
+<style>
+</style>
+  </head>
+  <body>
+    
+    <div class="container" style="margin-top: auto;">
+      <div class="title">Selling Form</div>
+      <form action="sell.php" method="post">
+        <div class="usr-detail">
+        <div class="input-box">
+          <span class="details">First Name</span>
+          <input type="text" placeholder="Enter your first name" required name="name" id="fname"onblur="validateForm(id,'errorFname',0)"><br>
+          <span class="error" id="errorFname"> Required</span>
+        </div>
+        <div class="input-box">
+          <span class="details">Last Name</span>
+          <input type="text" placeholder="Enter your last name" required name="uname" id="lname" onblur="validateForm(id,'errorLname',1)"><br>
+          <span class="error" id="errorLname"> Required</span>
+        </div>
+        <div class="input-box">
+          <span class="details">E-mail</span>
+          <input type="text" placeholder="Enter your e-mail" required name="email" id="email" onblur="validateFormEmail(id,'errorEmail','formatErrorEmail',2)"><br>
+          <span class="error" id="errorEmail">Required</span>
+          <span class="error" id="formatErrorEmail">Invalid Email</span>
+        </div>
+        <div class="input-box">
+          <span class="details">Phone no.</span>
+          <input type="text" placeholder="Enter your number" required name="phone" id="phone" onblur="validateForm(id,'errorPhone',3)"><br>
+          <span class="error" id="errorPhone"> Required</span>
+        </div>
+        <div class="input-box">
+          <span class="details">Address</span>
+          <input type="text" placeholder="Enter your address" required name="address1" id="address" onblur="validateForm(id,'errorAddress',4)"><br>
+          <span class="error" id="errorAddress"> Required</span>
+        </div>
+        <div class="input-box">
+          <span class="details" id="message" required>Vehicle Purchase Date</span>
+          <input type=date id = DOB>
+        </div>
+      </div>
+      <br>
+        <div class="input-box">
+          <span class="details">Select Vehicle Type</span><br>
+          <select name = "dropdown" id="dropdown" style="width: 270px;height: 40px;border-radius: 5px;">
+            <option value = "None" selected></option>
+            <option value = "Car">Car</option>
+            <option value = "Bike">Bike</option>
+            <option value = "Truck">Truck</option>
+         </select>
+         <br>
+         <br>
+         <div class="input-box">
+          <span class="details">Vehicle Brand</span><br>
+          <input type="text" placeholder="Enter your Vehicle Brand" required name="brand" style="width: 270px;height: 40px;border-radius: 5px;" id="brand" onblur="validateForm(id,'errorBrand',5)"><br>
+          <span class="error" id="errorBrand"> Required</span>
+        </div>
+        <br>
+        <br>
+        <div class="input-box">
+          <span class="details">Vehicle Model</span><br>
+          <input type="text" placeholder="Enter your Vehicle Model" required name="model" style="width: 270px;height: 40px;border-radius: 5px;" id="model" onblur="validateForm(id,'errorModel',6)"><br>
+          <span class="error" id="errorModel"> Required</span>
+        </div>
+        <br>
+        <br>
+         <div class="input-box">
+          <span class="details">Insert Image Of Owner</span><br>
+          <input type="file" id="myfile" name="myfile" multiple style="width: 270px;height: 40px;border-radius: 5px;"><br>
+        </div>
+        <br>
+        <div class="input-box">
+          <span class="details">Insert Image Of GovernmentId</span><br>
+          <input type="file" id="myfile" name="myfile" multiple style="width: 270px;height: 40px;border-radius: 5px;"><br>
+        </div>
+        <br>
+         <div class="input-box">
+          <span class="details">Price</span><br>
+          <input type="text" placeholder="Enter your vehicle selling price" name="price" style="width: 270px;height: 40px;border-radius: 5px;" id="price" onblur="validateForm(id,'errorPrice',7)"><br>
+          <span class="error" id="errorPrice"> Required</span>
+        </div>
+        <br>
+        <br>
+        <div class="input-box">
+          <span class="details">Vehicle Number</span><br>
+          <input type="text" name="vehiclenumber" placeholder="Enter your vehicle number" style="width: 270px;height: 40px;border-radius: 5px;" id="vnumber" onblur="validateForm(id,'errorNumber',8)"><br>
+          <span class="error" id="errorNumber"> Required</span>
+        </div>
+        <br>
+        <br>
+        <div class="input-box">
+          <span class="details" id="message" required>Last Service Date</span><br>
+          <input type=date id = DOB style="width: 270px;height: 40px;border-radius: 5px;">
+        </div>
+        <br>
+        <br>
+        <div class="input-box">
+          <span class="details">Kilometers Travelled</span><br>
+          <input type="text" name="kilometers" placeholder="Enter total Kilometers travelled by vehicle" style="width: 270px;height: 40px;border-radius: 5px;" id="kilometer" onblur="validateForm(id,'errorKilometer',9)"><br>
+          <span class="error" id="errorKilometer"> Required</span>
+        </div>
+        <br>
+        <br>
+        <div class="input-box">
+          <span class="details">Insert Image Of Vehicle</span><br>
+          <input type="file"  id="myfile" name="myfile" multiple style="width: 270px;height: 40px;border-radius: 5px;"><br>
+        </div>
+        <br>
+        <div class="input-box">
+          <span class="details">Insert Image Of Vehicle Documents</span><br>
+          <input type="file" id="myfile" name="myfile" multiple style="width: 270px;height: 40px;border-radius: 5px;"><br>
+        </div>
+        <br>
+         <div class="button">
+          <input type="submit" class="submitForm" id="submitButton" value="Sell">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
